@@ -27,13 +27,12 @@ def runner(username, password):
                     str(e)
                 try:
                     bot.filter_by_days(60)
-                    result = bot.my_report()
-                    bot.excel_sheet(result)
+                    bot.my_report()
                     bot.logout()
                 except Exception as e:
                     str(e)
                 else:
-                    return {"data": result}
+                    return {"message": "Successfully Dowloaded the report!"}
     
     except Exception as e:
         if 'in PATH' in str(e):

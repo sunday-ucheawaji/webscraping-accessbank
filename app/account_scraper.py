@@ -79,23 +79,11 @@ class Account(webdriver.Chrome):
     def filter_by_days(self, days):
         self.find_element(By.CSS_SELECTOR, f'input[value="last {str(days)} days"]').click()
 
-    # def report_statement(self):
-    #     report = [['DATE DESCRIPTION REFERENCE NO AMOUNT BAL TAG']]
-
-    #     container = self.find_elements(
-    #         By.CSS_SELECTOR,
-    #         'div[class="txn_hist resp_table_body checkbox_left ng-scope"]'
-    #     )
-
-    #     for item in container:
-    #         report.append([item.text])
-    #     print(report)
-    #     return report
     
     def my_report(self):
         export_button = self.find_element(By.CSS_SELECTOR, 'input[id="btn_export"]').click()
         excel_option= self.find_element(By.CSS_SELECTOR, 'a[id="BW_button_866824"]').click()
-        download_button= self.find_element(By.CSS_SELECTOR, 'input[id="BW_button_925330"]').click()
+        self.find_element(By.ID, 'BW_button_925330').click()
         try:
             close_button= self.find_element(By.CSS_SELECTOR, 'button[id="BW_button_453668"]').click()
         except Exception as e:

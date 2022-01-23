@@ -14,7 +14,6 @@ import store from './redux/store';
 import About from './components/About';
 
 const token = localStorage.getItem('token');
-console.log('root', token);
 
 ReactDOM.render(
   <Provider store={store}>

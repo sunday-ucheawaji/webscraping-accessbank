@@ -22,7 +22,7 @@ def runner(username, password):
             
                 try:
                     bot.no_transaction_found()
-                    return {"message": "No transaction"}
+                    return {"message": "No transaction found for the past 60 days"}
                 except Exception as e:
                     str(e)
                 try:
@@ -32,7 +32,7 @@ def runner(username, password):
                 except Exception as e:
                     str(e)
                 else:
-                    return {"message": "Successfully Dowloaded the report!"}
+                    return {"message": "Successfully Dowloaded the report in the current folder"}
     
     except Exception as e:
         if 'in PATH' in str(e):

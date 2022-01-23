@@ -55,7 +55,6 @@ export function login(email, password) {
         const token = response.data.token;
         dispatch(loginSuccess(token));
         localStorage.setItem('token', token);
-        console.log(response);
       })
       .catch((error) => {
         const errorMessage = error.message;
@@ -63,8 +62,6 @@ export function login(email, password) {
       });
   };
 }
-
-
 
 export function registration(fullName, email, password) {
   const registrationRequest = () => {
@@ -107,11 +104,9 @@ export function registration(fullName, email, password) {
     })
       .then((res) => {
         dispatch(registrationSuccess(res.data));
-        console.log(res);
       })
       .catch((err) => {
         dispatch(registrationFailure());
-        console.log(err.message);
       });
   };
 }

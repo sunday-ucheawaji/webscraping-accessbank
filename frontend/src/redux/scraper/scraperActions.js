@@ -41,7 +41,6 @@ export default function scraper(username, password) {
       .then((response) => {
         const data = response.data;
         dispatch(postSuccess(data));
-        console.log('data', data);
       })
       .catch((error) => {
         const errorMessage = error.message;

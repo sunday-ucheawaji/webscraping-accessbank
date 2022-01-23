@@ -7,6 +7,7 @@ import { Navigate } from 'react-router-dom';
 function Scraper({ token }) {
   const [input, setInput] = useState({});
   const [correctPassword, setCorrectPassword] = useState(true);
+  const { message } = useSelector(state=> state.scraper.data);
 
   const { posting, postingError, posted } = useSelector(
     (state) => state.scraper
@@ -92,7 +93,7 @@ function Scraper({ token }) {
         ) : postingError ? (
           <h2>Error in Posting</h2>
         ) : posted ? (
-          <h3> Successful! Excel file has been downloaded in this folder</h3>
+          <h3> {message}</h3>
         ) : null}
         {correctPassword ? null : (
           <h3 className={styles.correctPassword}>Incorrect Password</h3>

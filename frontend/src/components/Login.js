@@ -20,7 +20,6 @@ function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(login(credentials.email, credentials.psw));
-    console.log(credentials);
     setCredentials({});
   };
 

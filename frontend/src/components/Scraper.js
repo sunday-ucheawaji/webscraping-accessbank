@@ -92,7 +92,7 @@ function Scraper({ token }) {
         ) : postingError ? (
           <h2>Error in Posting</h2>
         ) : posted ? (
-          <h3> Successful! Excel file has been downloaded on your computer</h3>
+          <h3> Successful! Excel file has been downloaded in this folder</h3>
         ) : null}
         {correctPassword ? null : (
           <h3 className={styles.correctPassword}>Incorrect Password</h3>

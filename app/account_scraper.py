@@ -1,6 +1,5 @@
 from selenium import webdriver
 import os
-from openpyxl import Workbook
 from selenium.webdriver.common.by import By  
 from selenium.webdriver.support import expected_conditions as EC
 
@@ -12,7 +11,11 @@ class Account(webdriver.Chrome):
         self.teardown = teardown
         os.environ["PATH"] += self.driver_path
         options = webdriver.ChromeOptions()
-        options.add_experimental_option('excludeSwitches', ['enable-logging'])
+        
+        current_path = os.getcwd()
+        prefs = {'download.default_directory' : current_path}
+        options.add_experimental_option('prefs', prefs)
+
         super(Account, self).__init__(options=options)
         self.implicitly_wait(30)
         self.maximize_window()
@@ -88,15 +91,6 @@ class Account(webdriver.Chrome):
             close_button= self.find_element(By.CSS_SELECTOR, 'button[id="BW_button_453668"]').click()
         except Exception as e:
             str(e)
-            
-    def excel_sheet(self, arr):
-        wb = Workbook()
-        ws = wb.active
-        ws.title = "bank transaction"
-        for item in arr:
-            ws.append(item)
-        wb.save('bank_report.xlsx')
-        print('excel sheet printed')
 
     def logout(self):
         self.find_element(By.CSS_SELECTOR, 'a[class="logout-icon ng-scope ng-binding"]').click()

@@ -1,0 +1,47 @@
+.container {
+  height: 80vh;
+  text-align: center;
+  padding: 15%;
+  background-color: #cccccc;
+  background-image: repeating-radial-gradient(red, yellow 10%, #add8e6 20%);
+}
+h1 {
+  font-weight: 900;
+  font-size: 4rem;
+}
+
+
+.para {
+  background-color: white;
+  width: 30%;
+  margin: auto;
+  border-radius:10%;
+  padding: 1rem 0;
+}
+.para > * {
+  text-decoration: none;
+}
+
+@media (max-width: 480px) {
+  .container {
+  height: 80vh;
+  text-align: center;
+  padding: 25% 5%;
+  background-color: #cccccc;
+  background-image: repeating-radial-gradient(red, yellow 10%, #add8e6 20%);
+}
+h1 {
+  font-weight: 900;
+  font-size: 2rem;
+}
+.para {
+  background-color: white;
+  width: 50%;
+  margin: auto;
+  border-radius:10%;
+  padding: 1rem 0;
+}
+.para > * {
+  text-decoration: none;
+}
+}

@@ -2,6 +2,12 @@
 
 This web application is responsible for scraping access bank website and retrieving the transactions of an individual for 60 days.
 
+### Technologies
+
+1. Python FastAPI
+2. MongoDB database
+3. JavaScript React JS
+
 #### Set up a virtual environment for the project:
 
 `python3 -m venv virtualenv`
